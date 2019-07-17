@@ -1,0 +1,13 @@
+$mainFontColor: white;
+$font-style: 'Raleway', sans-serif;
+
+
+body {
+    background: lightseagreen;
+    font-family: $font-style;
+}
+
+h1 {
+    color: $mainFontColor;
+    text-align: center;
+}
