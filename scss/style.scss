@@ -1,13 +1,23 @@
-$mainFontColor: white;
+$fontColor: white;
+$titleColor: #2a363a;
 $font-style: 'Raleway', sans-serif;
 
 
-body {
-    background: lightseagreen;
+body,
+html {
+    background: #99b898;
     font-family: $font-style;
+    margin: auto;
+    padding: auto;
 }
 
-h1 {
-    color: $mainFontColor;
-    text-align: center;
+.container {
+    background: white;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    height: 8vh;
+    h2 {
+        color: $titleColor;
+    }
 }
