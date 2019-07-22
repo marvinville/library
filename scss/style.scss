@@ -1,23 +1,86 @@
-$fontColor: white;
-$titleColor: #2a363a;
-$font-style: 'Raleway', sans-serif;
+$font: 'Raleway', sans-serif;
+$lightBlk: #212f39;
+$darkBlk: #000c14;
+$gray: #8ea9ba;
 
 
 body,
 html {
-    background: #99b898;
-    font-family: $font-style;
+    background: $darkBlk;
+    font-family: $font;
     margin: auto;
     padding: auto;
+    box-sizing: border-box;
 }
 
 .container {
-    background: white;
-    padding-top: 5px;
-    padding-bottom: 20px;
+    background: $lightBlk;
+    padding-top: 2px;
+    padding-bottom: 25px;
     padding-left: 20px;
     height: 8vh;
-    h2 {
-        color: $titleColor;
+    h1 {
+        color: white;
+    }
+}
+
+#btnAdd {
+    background: $lightBlk;
+    color: white;
+    font-family: $font;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px 15px;
+    margin: 20px 20px;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    &:hover {
+        background: $gray;
+        color: white;
+        border-color: $gray;
+        cursor: pointer;
+    }
+}
+
+#entryForm {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .form-container {
+        background: $gray;
+        color: $darkBlk;
+        padding: 10px 25px;
+        width: 450px;
+        border: 1px solid $gray;
+        border-radius: 8px;
+        position: relative;
+        h2 {
+            text-align: center;
+        }
+        .entry-input, .entry-label {
+            display: block;
+        }
+        .entry-label {
+            font-weight: 500;
+        }
+        .entry-input {
+            margin: 10px auto;
+            padding: 3px 5px;
+            border: 1px solid $lightBlk;
+            border-radius: 5px;
+            width: 100%;
+            font-family: $font;
+            font-size: 1.1rem;
+            line-height: 36px;
+            box-sizing: border-box;
+        }
+        .add-book-btn {
+            background: $lightBlk;
+            border: 1px solid $lightBlk;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 25px;
+            margin: 13px auto;
+        }
     }
 }

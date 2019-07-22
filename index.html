@@ -9,7 +9,43 @@
 </head>
 <body>
     <div class="container">
-        <h2>Library</h2>
+        <h1>Bookshelf</h1>
+    </div>
+    <div id="buttonAdd">
+        <button id="btnAdd" class="showForm">Add Book</button>
+    </div>
+
+    <div class="addForm">
+        <form id="entryForm">
+            <div class="form-container">
+                <div class="form-title">
+                    <h2>New Book</h2>
+                </div>
+                <div class="entry-fields">
+                    <label for="title" class="entry-label">Title</label>
+                    <input type="text" class="entry-input" id="book-title" autofocus required>
+                </div>
+                <div class="entry-fields">
+                    <label for="author" class="entry-label">Author</label>
+                    <input type="text" class="entry-input" id="book-author" required>
+                </div>
+                <div class="entry-fields">
+                    <label for="pages" class="entry-label">Pages</label>
+                    <input type="number" class="entry-input" id="book-pages" min="1" optional>
+                </div>
+                <div class="entry-fields">
+                    <label for="status" class="entry-label">Status</label>
+                    <select id="book-status" class="entry-input" name="status">
+                        <option value="read">Read</option>
+                        <option value="currently-reading">Currently Reading</option>
+                        <option value="to-read">To Read</option>
+                    </select>
+                </div>
+                <div class="entry-save">
+                    <button type="submit" class="add-book-btn" id="submit">Save</button>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
