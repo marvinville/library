@@ -15,7 +15,7 @@
         <button id="btnAdd" class="showForm">Add Book</button>
     </div>
 
-    <div class="addForm">
+    <div class="addForm-container hidden-container">
         <form id="entryForm">
             <div class="form-container">
                 <div class="form-title">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="entry-fields">
                     <label for="author" class="entry-label">Author</label>
-                    <input type="text" class="entry-input" id="book-author" required>
+                    <input type="text" class="entry-input" id="book-author">
                 </div>
                 <div class="entry-fields">
                     <label for="pages" class="entry-label">Pages</label>
@@ -42,10 +42,12 @@
                     </select>
                 </div>
                 <div class="entry-save">
+                    <button class="closeBtn" id="cancelButton">Cancel</button>
                     <button type="submit" class="add-book-btn" id="submit">Save</button>
                 </div>
             </div>
         </form>
     </div>
+    <script src="./js/app.js"></script>
 </body>
 </html>
