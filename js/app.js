@@ -22,7 +22,14 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-
+  function addBook() {
+    firebase.database().ref('Book').set({
+        title: document.getElementById('book-title').value,
+        author: document.getElementById('book-author').value,
+        pages: document.getElementById('book-pages').value,
+        status: document.getElementById('book-status').value
+    });
+}
 
 
 // Shows entry form
