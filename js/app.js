@@ -1,7 +1,7 @@
-var titleBook = document.getElementById('book-title');
-// var author = document.getElementById('book-author');
-// var pages = document.getElementById('book-pages');
-// var status = document.getElementById('book-status');
+let title = document.getElementById('book-title');
+let author = document.getElementById('book-author');
+let pages = document.getElementById('book-pages');
+let status = document.getElementById('book-status');
 
 var btnShowForm = document.getElementById('btnAdd');
 var btnCloseForm = document.getElementById('cancelButton');
@@ -22,20 +22,26 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  function addBook() {
-    firebase.database().ref('Book').set({
-        title: document.getElementById('book-title').value,
-        author: document.getElementById('book-author').value,
-        pages: document.getElementById('book-pages').value,
-        status: document.getElementById('book-status').value
+let bookInput = firebase.database().ref('Book');
+
+let addBook = () => {
+    let newBookInput = bookInput.push();
+    newBookInput.set({
+        title: title.value,
+        author: author.value,
+        pages: pages.value,
+        status: status.value
     });
 }
 
+btnSubmit.addEventListener('click', () => {
+    addBook();
+});
 
 // Shows entry form
 btnShowForm.addEventListener('click', () => {
     newBookForm.style.visibility = 'visible';
-    setTimeout(titleBook.focus(), 400)
+    // setTimeout(title.focus, 400)
 })
 
 // Closes entry form
