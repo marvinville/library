@@ -22,11 +22,11 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-let bookInput = firebase.database().ref('Book');
+
+let bookInput = firebase.database().ref('Book').push();
 
 let addBook = () => {
-    let newBookInput = bookInput.push();
-    newBookInput.set({
+    bookInput.set({
         title: title.value,
         author: author.value,
         pages: pages.value,
