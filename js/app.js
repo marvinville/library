@@ -2,6 +2,7 @@ let title = document.getElementById('book-title');
 let author = document.getElementById('book-author');
 let pages = document.getElementById('book-pages');
 let status = document.getElementById('book-status');
+var tableBody = document.querySelector('#tbody');
 
 var btnShowForm = document.getElementById('btnAdd');
 var btnCloseForm = document.getElementById('cancelButton');
@@ -22,7 +23,26 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+// Retrieve data from Firebase
+var ref = firebase.database().ref('Book');
 
+ref.on("child_added", function(snapshot) {
+  snapshot.forEach(function(child) {
+    // displays the keys and values 
+    console.log(child.key + ': ' + child.val());
+
+    // var childData = child.key;
+    var bookTitle = child.val().title; // prints undefined
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+    td.innerText = bookTitle;
+    tr.appendChild(td);
+    tableBody.appendChild(tr);
+  });
+});
+
+
+// Book Inputs reference
 let bookInput = firebase.database().ref('Book').push();
 
 let addBook = () => {
